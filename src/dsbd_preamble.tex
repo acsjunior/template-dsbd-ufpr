@@ -1,0 +1,83 @@
+%-----------------------------------------------------------------------
+
+\usepackage[top=2.5cm, left=1.75cm, right=1.75cm, bottom=2cm]{geometry}
+\usepackage[brazil]{babel}
+\usepackage[utf8x]{inputenc}
+
+\usepackage{booktabs}
+
+\usepackage{amsmath, amsfonts, amssymb, amsthm}
+\renewcommand{\labelitemi}{\raisebox{0.3ex}{\footnotesize{$\blacktriangleright$}}}
+\usepackage{enumitem}
+\setlist{itemsep = -2pt}
+\usepackage{setspace}
+
+\usepackage{graphicx}
+\usepackage[svgnames]{xcolor}
+\usepackage[colorlinks, citecolor = DarkRed, linkcolor = DarkGreen, urlcolor = DarkBlue]{hyperref}
+
+\usepackage{lmodern}
+% \usepackage{palatino}
+\usepackage{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage[scaled=0.8]{beramono}
+
+% Padrão de fontes para títulos de sessão e similares.
+\usepackage{titlesec}
+\titleformat*{\section}{\Large\bfseries\sffamily}
+\titleformat*{\subsection}{\large\bfseries\sffamily}
+\titleformat*{\subsubsection}{\bfseries\sffamily}
+
+\usepackage{bookmark}       % Para ter pontos marcados no texto.
+\usepackage{lipsum}         % Para texto dummy.
+% \lipsum, \lipsum[3-56]
+
+\usepackage{microtype}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{float}
+
+\usepackage{natbib}
+
+\makeatletter
+\let\@fnsymbol\@arabic
+\makeatother
+
+% Cabeçalhos e rodapés.
+\usepackage{fancyhdr}
+\pagestyle{fancyplain}
+\fancyhf{}
+\lhead{\fancyplain{}{Especialização em Data Science e Big Data $\cdot$ UFPR}}
+\rhead{\fancyplain{}{\href{http://dsbd.leg.ufpr.br}{\textit{dsbd.leg.ufpr.br}}}}
+\cfoot{\fancyplain{}{\thepage}}
+
+\usepackage{titling}
+
+\setlength{\droptitle}{-1.5cm}
+\renewcommand{\maketitlehooka}{%
+  \begin{minipage}[t]{4.5cm}\vspace{-0.45em}%
+    \includegraphics[height = 1.5cm]{\pathtologodsbd}
+  \end{minipage}
+  \hspace{0.5em}
+  \begin{minipage}[t]{8cm}\vspace{0pt}%
+    {\large Especialização em Data Science e Big Data}\\
+    {Universidade Federal do Paraná}\\
+    {\href{http://dsbd.leg.ufpr.br}{\textit{dsbd.leg.ufpr.br}}}\\
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{2.25cm}\vspace{-0.45em}%
+    \includegraphics[height = 1.5cm]{\pathtologoufpr}
+  \end{minipage}
+
+  \rule{\linewidth}{0.5pt}
+  \\[2ex]
+  }
+\renewcommand{\maketitlehookc}{}
+
+\pretitle{\Large\bfseries\sffamily}
+\posttitle{\vskip 0.5em}
+
+\preauthor{\begin{flushleft}}
+\postauthor{\end{flushleft}}
+
+%-----------------------------------------------------------------------

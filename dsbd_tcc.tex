@@ -1,0 +1,92 @@
+%-----------------------------------------------------------------------
+% Arquivo template *.tex para TCC da Especialização em Data Science &
+% Big Data.
+%-----------------------------------------------------------------------
+
+% Classe do documento.
+\documentclass[9pt, a4paper, twocolumn]{article}
+
+%-----------------------------------------------------------------------
+% Metadados do documento. ----------------------------------------------
+
+\title{$title$}
+\author{
+  $author$\footnotemark[1]\\
+  %Orientador Externo se Houver\footnotemark[2]\\
+  $orientador$\footnotemark[2]\\
+  %Outro Orientador do Programa\footnotemark[3]
+}
+
+% Define as chamadas dos autores.
+\def\articlefootnotes{
+  \let\thefootnote\relax\footnotetext{$role$, \href{emailto:juniorssz@gmail.com}{$email$}.}
+  %\let\thefootnote\relax\footnotetext{Chefe de Departamento de Data Science da Empresa X, \url{chefe@empresax.com}.}
+  \let\thefootnote\relax\footnotetext{$orientador_role$.}
+}
+\date{}
+
+% Define variáveis usadas no `dsbd_capa.tex`.
+\def\capaautor{$author$}
+\def\capaorientador{$orientador$}
+\def\capaano{$ano$}
+\makeatletter
+\let\capatitulo\@title
+\makeatother
+
+%-----------------------------------------------------------------------
+% Preâmbulo. -----------------------------------------------------------
+
+% Define variáveis usadas no `dsbd_preamble.tex`.
+\def\pathtologoufpr{src/logo-ufpr.png}
+\def\pathtologodsbd{src/dsbd1x4.png}
+
+% Não alterar o conteúdo do arquivo abaixo.
+\input{src/dsbd_preamble.tex}
+
+%-----------------------------------------------------------------------
+% Início do documento. -------------------------------------------------
+
+\begin{document}
+
+%-----------------------------------------------------------------------
+% Capa.
+
+% Não alterar o conteúdo do arquivo abaixo.
+\input{src/dsbd_capa.tex}
+
+%-----------------------------------------------------------------------
+
+\twocolumn
+
+\maketitle
+
+% Para criar a chamada dos autores no rodapé.
+\articlefootnotes
+
+\begin{abstract}
+  $resumo$
+  
+  \noindent\textbf{Palavras-chave}: $palavras_chave$.
+\end{abstract}
+
+\renewcommand{\abstractname}{Abstract}
+\begin{abstract}
+  \it
+  $abstract$
+
+  \noindent\textbf{Keywrods}: $keywords$.
+\end{abstract}
+
+%-----------------------------------------------------------------------
+
+$body$
+
+%-----------------------------------------------------------------------
+% Referências bibliográficas. ------------------------------------------
+
+\bibliographystyle{$biblio-style$}%
+\bibliography{$references$}%
+
+\end{document}
+
+%-----------------------------------------------------------------------

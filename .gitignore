@@ -1,0 +1,14 @@
+.DS_Store
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.RDataTmp
+*.bak
+*.sav
+*.log
+*.out
+*.aux
+*.bbl
+*.blg
+tex/article/article_files/*
