@@ -1,10 +1,18 @@
 ---
 title: "Título do trabalho de conclusão de curso de especialização"
-author: "Aluno da Especialização"
-role: "Aluno do programa de Especialização em Data Science & Big Data"
-email: "email@aluno.com.br"
-orientador: "Orientador do Programa"
-orientador_role: "Professor do Departamento de Estatística - DEST/UFPR"
+authors_dict:
+  - {name: Aluno do Programa,
+     index: 1,
+     role: "Aluno do programa de Especialização em Data Science & Big Data, [aluno@dsbd.leg.ufpr.br](mailto:aluno@dsbd.leg.ufpr.br)."}
+  - {name: Orientador do Programa,
+     index: 2,
+     role: "Professor do Departamento de Estatística - DEST/UFPR, [orientador@dsbd.leg.ufpr.br](mailto:orientador@dsbd.leg.ufpr.br)."}
+  - {name: Outro Orientador do Programa,
+     index: 3,
+     role: "Professor do Departamento de Informática - DINF/UFPR.",}
+  - {name: Orientador Externo,
+     index: 4,
+     role: "Chefe do Departamento de Data Science."}
 ano: "2020"
 references: "src/referencias.bib"
 biblio-style: unsrt
@@ -22,7 +30,7 @@ keywords: "Lorem, Ipsum, Lorem, Ipsum, Lorem"
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, message=FALSE, warning=FALSE)
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 options(knitr.table.format = "latex", scipen = 999)
 
 TABLE_FONT_SIZE <- 9
@@ -53,7 +61,7 @@ kable(tb_metricas, booktabs = T, caption = "Interpretação das métricas de des
 
 A tabela \@ref(tab:metricas) indica Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
-O objetivo da regressão logística é o estudo da probabilidade de ocorrência de um evento de interesse ($Y$), apresentado na forma dicotômica ($Y=1$ se o evento de interesse ocorrer; $Y=0$, caso contrário), em função de um vetor de covariáveis ($X_1, ..., X_n$). Sua definição ocorre através da equação 
+O objetivo da regressão logística é o estudo da probabilidade de ocorrência de um evento de interesse ($Y$), apresentado na forma dicotômica ($Y=1$ se o evento de interesse ocorrer; $Y=0$, caso contrário), em função de um vetor de covariáveis ($X_1, ..., X_n$). Sua definição ocorre através da equação
 \begin{equation}
 \ln \left ( \dfrac{\pi_i}{1-\pi_i} \right ) = \beta_0 + \beta_1 X_{i1} + ... +  \beta_p X_{ip}\text{,}(\#eq:logito)
 \end{equation} em que $\beta_j$ ($j = 0,1,2,...,p$) representa os parâmetros a serem estimados, sendo $\beta_0$ o intercepto e os demais, parâmetros de cada covariável. E o subscrito $i$ representa cada observação da amostra ($i = 1, 2,...,n$) \cite{Favero2017}.

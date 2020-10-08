@@ -4,30 +4,55 @@
 %-----------------------------------------------------------------------
 
 % Classe do documento.
-\documentclass[9pt, a4paper, twocolumn]{article}
+\documentclass[a4paper, twocolumn]{article}
 
 %-----------------------------------------------------------------------
 % Metadados do documento. ----------------------------------------------
 
+$if(title)$
 \title{$title$}
-\author{
-  $author$\footnotemark[1]\\
-  %Orientador Externo se Houver\footnotemark[2]\\
-  $orientador$\footnotemark[2]\\
-  %Outro Orientador do Programa\footnotemark[3]
-}
+$endif$
 
+$if(authors_dict)$
+% Define a lista de autores.
+\author{
+  $for(authors_dict)$
+    $authors_dict.name$$if(authors_dict.index)$\footnotemark[$authors_dict.index$]$endif$\\
+  $endfor$
+}
+$endif$
+
+$if(authors_dict)$
 % Define as chamadas dos autores.
 \def\articlefootnotes{
-  \let\thefootnote\relax\footnotetext{$role$, \href{emailto:juniorssz@gmail.com}{$email$}.}
-  %\let\thefootnote\relax\footnotetext{Chefe de Departamento de Data Science da Empresa X, \url{chefe@empresax.com}.}
-  \let\thefootnote\relax\footnotetext{$orientador_role$.}
+  $for(authors_dict)$
+    $if(authors_dict.role)$
+    \let\thefootnote\relax\footnotetext{
+        $if(authors_dict.role)$\textsuperscript{$authors_dict.index$}$endif$$authors_dict.role$
+      }
+    $endif$
+  $endfor$
 }
+$endif$
+
 \date{}
 
 % Define variáveis usadas no `dsbd_capa.tex`.
-\def\capaautor{$author$}
-\def\capaorientador{$orientador$}
+$if(authors_dict)$
+  $for(authors_dict)$
+    $if(authors_dict.index)$
+    \def\mainauthor{$authors_dict.index$}
+    \if\mainauthor1
+      \def\capaautor{$authors_dict.name$}
+    \fi
+    \def\mainadvisor{$authors_dict.index$}
+    \if\mainadvisor2
+      \def\capaorientador{$authors_dict.name$}
+    \fi
+    $endif$
+  $endfor$
+$endif$
+
 \def\capaano{$ano$}
 \makeatletter
 \let\capatitulo\@title
@@ -65,7 +90,7 @@
 
 \begin{abstract}
   $resumo$
-  
+
   \noindent\textbf{Palavras-chave}: $palavras_chave$.
 \end{abstract}
 
